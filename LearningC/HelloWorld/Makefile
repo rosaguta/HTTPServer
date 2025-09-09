@@ -3,7 +3,7 @@
 all: main
 
 main: main.c
-	gcc main.c -o main
+	gcc main.c -o main.o
 
 clean:
-	rm -f main
+	rm -f main.o

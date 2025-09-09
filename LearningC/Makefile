@@ -1,6 +1,6 @@
 .PHONY: all clean
 
-SUBDIRS := bools HeaderFiles HelloWorld Fibonacci
+SUBDIRS := bools HeaderFiles HelloWorld Fibonacci arrays files memory strings
 
 all:
 	for dir in $(SUBDIRS); do \

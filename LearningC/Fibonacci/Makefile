@@ -3,7 +3,7 @@
 all: fibonacci
 
 fibonacci: Fibonacci.c
-	gcc Fibonacci.c -o fibonacci
+	gcc Fibonacci.c -o fibonacci.o
 
 clean:
-	rm -f fibonacci
+	rm -f fibonacci.o

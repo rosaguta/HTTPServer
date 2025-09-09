@@ -3,7 +3,7 @@
 all: bools
 
 bools: bools.c
-	gcc bools.c -o bools
+	gcc bools.c -o bools.o
 
 clean:
-	rm -f bools
+	rm -f bools.o
