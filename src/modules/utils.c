@@ -2,7 +2,7 @@
 
 void build_http_response(const char *file_name, const char *file_ext, char *response, size_t *response_len)
 {
-  printf("Considered FILE NAME: %s\n", file_name);
+  // printf("Considered FILE NAME: %s\n", file_name);
   // building the header
   const char *mime_type = get_mime_type(file_ext);
   char *header = (char *)malloc(BUFFER_SIZE * sizeof(char));
@@ -12,7 +12,7 @@ void build_http_response(const char *file_name, const char *file_ext, char *resp
            "Content-Type: %s\r\n"
            "\r\n",
            mime_type);
-  printf("header: %s", header);
+  // printf("header: %s", header);
   // try open requested file
   int file_fd = get_file_descriptor(SRC_DIR, file_name);
   if (file_fd == -1)
@@ -28,8 +28,8 @@ void build_http_response(const char *file_name, const char *file_ext, char *resp
   // getting file size with fstat https://linux.die.net/man/2/fstat
   struct stat file_stat;
   fstat(file_fd, &file_stat);
-  off_t file_size = file_stat.st_size;
-  printf("FILE_DESC: %d SIZE: %li\n", file_fd, file_size);
+  // off_t file_size = file_stat.st_size;
+  // printf("FILE_DESC: %d SIZE: %li\n", file_fd, file_size);
 
   // copy header to response buffer
   *response_len = 0;
@@ -41,7 +41,7 @@ void build_http_response(const char *file_name, const char *file_ext, char *resp
   {
     *response_len += bytes_read;
   }
-  printf("response: %s\n", response);
+  // printf("response: %s\n", response);
 
   free(header);
   close(file_fd);
